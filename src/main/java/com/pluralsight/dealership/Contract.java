@@ -1,5 +1,7 @@
 package com.pluralsight.dealership;
 
+import com.pluralsight.dealership.models.Vehicle;
+
 public abstract class Contract {
 
     //base class - salescontract / leasecontract extend

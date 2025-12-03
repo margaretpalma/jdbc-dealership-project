@@ -1,4 +1,6 @@
-package com.pluralsight.dealership;
+package com.pluralsight.dealership.models;
+
+import com.pluralsight.dealership.Contract;
 
 public class LeaseContract extends Contract {
 

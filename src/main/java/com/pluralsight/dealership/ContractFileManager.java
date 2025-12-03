@@ -1,5 +1,8 @@
 package com.pluralsight.dealership;
 
+import com.pluralsight.dealership.models.LeaseContract;
+import com.pluralsight.dealership.models.SalesContract;
+
 import java.io.FileWriter;
 import java.io.IOException;
 

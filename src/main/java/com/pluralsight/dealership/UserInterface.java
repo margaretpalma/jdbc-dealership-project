@@ -1,5 +1,10 @@
 package com.pluralsight.dealership;
 
+import com.pluralsight.dealership.models.Dealership;
+import com.pluralsight.dealership.models.LeaseContract;
+import com.pluralsight.dealership.models.SalesContract;
+import com.pluralsight.dealership.models.Vehicle;
+
 import java.util.ArrayList;
 
 public class UserInterface {

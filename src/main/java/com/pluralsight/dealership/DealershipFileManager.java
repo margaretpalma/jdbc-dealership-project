@@ -1,5 +1,8 @@
 package com.pluralsight.dealership;
 
+import com.pluralsight.dealership.models.Dealership;
+import com.pluralsight.dealership.models.Vehicle;
+
 import java.io.*;
 
 public class DealershipFileManager {
