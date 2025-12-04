@@ -7,10 +7,10 @@ import org.apache.commons.dbcp2.BasicDataSource;
 //create and manage connections
 public class DataSource {
 
+
     private static BasicDataSource ds = new BasicDataSource();
 
-    //static - runs once
-
+    //static - runs only once when class is used
     static {
         ds.setUrl("jdbc:mysql://localhost:3306/cardealership");
         ds.setUsername("root");
