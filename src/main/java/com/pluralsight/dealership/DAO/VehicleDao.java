@@ -70,12 +70,96 @@ public class VehicleDao {
 
             ResultSet rs = ps.executeQuery();
 
-
+            while (rs.next()){
+                vehicles.add(mapVehicle(rs));
+            }
         }
 
-
-
+            return vehicles;
 
     }
 
+    public List<Vehicle> getByYearRange(int min, int max) throws SQLException {
+
+        String sql = "SELECT * FROM vehicles WHERE year BETWEEN ? AND ?";
+        List<Vehicle> vehicles = new ArrayList<>();
+
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+
+            ps.setInt(1, min);
+            ps.setInt(2, max);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                vehicles.add(mapVehicle(rs));
+            }
+        }
+        return vehicles;
+    }
+
+    public List<Vehicle> getByColor(String vehicleColor) throws SQLException {
+        String sql = "SELECT * FROM vehicles WHERE color = ?";
+        List<Vehicle> vehicles = new ArrayList<>();
+
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+
+            ps.setString(1, vehicleColor);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                vehicles.add(mapVehicle(rs));
+            }
+            return vehicles;
+        }
+    }
+    public List<Vehicle> getByMileage(int min, int max) throws SQLException{
+
+            String sql = "SELECT * FROM vehicles WHERE color = ?";
+            List<Vehicle> vehicles = new ArrayList<>();
+
+            try (Connection connection = dataSource.getConnection();
+                 PreparedStatement ps = connection.prepareStatement(sql)) {
+
+                ps.setInt(1, min);
+                ps.setInt(2, max);
+
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    vehicles.add(mapVehicle(rs));
+                }
+            }
+                return vehicles;
+            }
+
+    public List<Vehicle> getByType(String vehicleType) throws SQLException{
+
+        String sql = "SELECT * FROM vehicles WHERE color = ?";
+        List<Vehicle> vehicles = new ArrayList<>();
+
+        try (Connection connection = dataSource.getConnection();
+             PreparedStatement ps = connection.prepareStatement(sql)) {
+
+            ps.setString(1, vehicleType);
+
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                vehicles.add(mapVehicle(rs));
+            }
+        }
+        return vehicles;
+    }
+
+
+
+
+
 }
+
+
